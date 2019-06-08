@@ -62,22 +62,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //元素数量为零
 
 
-    for(int i=0; i<items.length-1; i++){
-        int num = i;
-        for(int j=i+1; j<items.length; j++){
-            if (items[num].compareTo(items[j])>0){
-                num=j;
+        for (int i = 0; i < items.length - 1; i++) {
+            int minPos = i;
+            for (int j = i + 1; j < items.length; j++) {
+                if (items[minPos].compareTo(items[j]) > 0) {
+                    minPos = j;
 //---
+                }
             }
+            swap(minPos, i);
         }
-        swap(num,i);
-    }
     }
 
     private void swap(int m, int n) {
-int tmp=items[m];
-items[m]=items[n];
-items[n]=tmp;
+        int tmp = items[m];
+        items[m] = items[n];
+        items[n] = tmp;
     }
 
 
