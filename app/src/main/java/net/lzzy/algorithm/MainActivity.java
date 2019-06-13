@@ -48,6 +48,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void insertSort() {
 //todo:直接插入排序
+        for(int i=1;i<items.length;i++){
+            int j=i-1;
+            if (items[j].compareTo(items[i]) < 0){
+                continue;
+            }
+            Integer tmp=items[i];
+            while (j>=0&&items[j].compareTo(tmp)>0){
+                items[j+1]=items[j];
+                j--;
+            }
+            items[j+1]=tmp;
+
+        }
 //初始时，第一个元素自己成为有序区，后面则为无序区，取出下一个元素并对无序区进行扫描对比
 // 之后无序区第一个元素和有序区最后一个元素进行比较大小，若小于取出的元素则并入有序区并扫描下一个
 //直到扫描至无序区大于或等于取出元素，则替换位置
