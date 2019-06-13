@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //元素数量为零
 
 
-        for (int i = 0; i < items.length - 1; i++){
+        for (int i = 0; i < items.length - 1; i++) {
             int minPos = i;
             for (int j = i + 1; j < items.length; j++) {
                 if (items[minPos].compareTo(items[j]) > 0) {
